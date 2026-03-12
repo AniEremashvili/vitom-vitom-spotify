@@ -16,10 +16,32 @@ body {
   color: #fff;
   display: grid;
   grid-template-columns: 240px 1fr;
-  grid-template-rows: 60px 1fr;
-  grid-template-areas: "aside header" "aside main";
+  grid-template-rows: 64px 1fr 90px;
+  grid-template-areas: "aside header" "aside main" "player player";
   height: 100vh;
-  margin: 0;
+  overflow: hidden;
+}
+
+aside {
+  grid-area: aside;
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+  background-color: #000;
+  overflow-y: auto;
+  margin: 8px;
+  padding: 8px 24px;
+  border: 1px solid #222222;
+  border-radius: 8px;
+}
+
+footer.player {
+  grid-area: player;
 }
 
 header {
@@ -140,6 +162,9 @@ aside nav ul li a.active {
   width: 100%;
   accent-color: #fff;
 }
+.player-left .progress-container .btn-control {
+  flex-shrink: 0;
+}
 .player-center {
   display: flex;
   justify-content: center;
@@ -161,6 +186,10 @@ aside nav ul li a.active {
   font-weight: 500;
   margin: 0;
   color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
 }
 .player-center .album-info .song-details .artist-name, .player-center .album-info .song-details .album-name {
   font-size: 12px;
@@ -181,6 +210,54 @@ aside nav ul li a.active {
   margin: 0 10px;
   border-radius: 4px;
 }
+.player-right .btn-icon {
+  flex-shrink: 0;
+}
 .player-right .btn-special img {
   width: 35px;
+}
+
+@media (max-width: 768px) {
+  .player-right {
+    display: none;
+  }
+  .album-name {
+    display: none;
+  }
+  .player {
+    padding: 0 10px;
+  }
+}
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.filters .chip {
+  border: none;
+  cursor: pointer;
+  font-family: "Satoshi", sans-serif;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  background-color: #202020;
+  color: #fff;
+}
+.filters .chip.active {
+  background-color: #fff;
+  color: #000;
+}
+.filters .chip:hover:not(.active) {
+  background-color: rgb(57.5, 57.5, 57.5);
+}
+.filters .filter-settings {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
 }/*# sourceMappingURL=main.css.map */

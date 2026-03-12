@@ -1,0 +1,44 @@
+@use "variables" as *;
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm; // Uniform spacing between chips
+  justify-content: space-between;
+  margin-bottom: $spacing-md;
+
+  .chip {
+    border: none;
+    cursor: pointer;
+    font-family: $font-primary;
+    
+    // Layout & Shape
+    padding: 8px 16px;
+    border-radius: $radius-md; // Creates rounded shape
+    font-size: $font-md;
+    transition: all 0.2s ease;
+
+    // Inactive State 
+    background-color:$color-secondary; 
+    color: $color-white;
+
+    // Active State
+    &.active {
+      background-color: $color-white; // High contrast
+      color: $color-background; 
+    }
+
+    // hover for inactive chips
+    &:hover:not(.active) {
+      background-color: lighten($color-secondary, 10%); // Slightly lighter on hover
+    }
+  }
+  .filter-settings {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+  }
+}
