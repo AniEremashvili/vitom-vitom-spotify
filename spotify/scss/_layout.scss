@@ -10,7 +10,7 @@ body {
   background-color: $color-background;
   color: $color-white;
   display:grid;
-  grid-template-columns: 256px 1fr; // aside fixed, content flexible
+  grid-template-columns: 240px 1fr; // aside fixed, content flexible
   grid-template-rows: 60px 1fr;     // header height fixed, main fills remaining
   grid-template-areas:
     "aside header"

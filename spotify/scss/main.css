@@ -15,7 +15,7 @@ body {
   background-color: #000;
   color: #fff;
   display: grid;
-  grid-template-columns: 256px 1fr;
+  grid-template-columns: 240px 1fr;
   grid-template-rows: 60px 1fr;
   grid-template-areas: "aside header" "aside main";
   height: 100vh;
@@ -88,11 +88,11 @@ aside nav ul li a.active {
   justify-content: space-between;
   padding: 0 30px;
   background-color: #333842;
-  height: 81px;
+  height: 70px;
   position: fixed;
   bottom: 0;
   right: 0;
-  left: 256px;
+  left: 240px;
   z-index: 100;
   border-radius: 12px;
   margin: 8px;

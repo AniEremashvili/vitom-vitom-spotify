@@ -6,13 +6,13 @@
   justify-content: space-between;
   padding: 0 30px;
   background-color: $color-footer;
-  height: 81px; 
+  height: 70px; 
   
   // FIXED POSITIONING
   position: fixed;
   bottom: 0;
   right: 0;
-  left: 256px; 
+  left: 240px; 
   z-index: 100;
   border-radius: $radius-lg;
   margin: $spacing-sm;
