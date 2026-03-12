@@ -42,7 +42,8 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    flex: 2; // Takes up more space for the seek bar
+    flex: 1; // Takes up more space for the seek bar
+    flex-basis:0;
 
     .player-container {
       display: flex;
@@ -78,6 +79,8 @@
     display: flex;
     justify-content: center;
     flex: 1;
+    flex-basis: 0;     // Forces the math to start from 0
+    
     
     .album-info {
       display: flex;
@@ -118,6 +121,7 @@
     justify-content: flex-end;
     gap: 15px;
     flex: 1;
+    flex-basis: 0; // Forces the math to start from 0
 
     .divider {
       width: 2px;

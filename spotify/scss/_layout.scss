@@ -27,7 +27,9 @@ body {
 }
 
 aside { grid-area: aside; }
-header { grid-area: header; }
+header { grid-area: header; 
+margin:$spacing-sm;
+}
 main { 
   
   grid-area: main;
