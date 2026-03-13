@@ -1,45 +1,55 @@
-/* ==========================
-   Global Mixins
-   ======================== */
+@use "variables" as *;
 
-
-@mixin image-button-reset {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.1s ease, opacity 0.2s ease;
-
-    &:hover {
-        transform: scale(1.05);
-        opacity: 1;
-    }
-
-    &:active {
-        transform: scale(0.95);
-    }
-
-    img {
-        display: block;
-        height: auto;
-    }
+//Flexbox Center 
+@mixin flex-center($justify: center, $align: center, $gap: 0) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
 }
 
-// 2. Text Truncation
-
-@mixin truncate {
+// Text Truncation (For long song/album titles)
+@mixin truncate($max-width) {
+  display: -webkit-box;
+    -webkit-line-clamp: 2;   // For older Chrome, Safari, and Edge
+    line-clamp: 2;          
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
-// 3. Flex Center Helper
 
-@mixin flex-center {
+
+// Reset Button (for player and filter buttons)
+@mixin btn-reset {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+
+@mixin music-section-styles {
+  padding: 24px;
+  background-color: $color-border;
+  color: $color-white;
+  border-radius: $radius-md;
+  margin-bottom: $spacing-lg;
+
+  .section-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .card-grid {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    
+    gap: $spacing-md;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    &::-webkit-scrollbar { display: none; }
+    scrollbar-width: none;
+  }
 }

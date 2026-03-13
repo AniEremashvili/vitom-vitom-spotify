@@ -1,4 +1,5 @@
 @use "variables" as *;
+@use "mixins" as *;
 header {
   grid-area: header;
   font-family: $font-primary;
@@ -7,16 +8,12 @@ header {
   
 
   nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-center(space-between, center);
     
   }
   
   .main-navigation{
-    display: flex;
-    align-items: center;
-    gap: $spacing-xl;
+    @include flex-center(center, center, $spacing-xl);
   }
   .actions{
     display: flex;
